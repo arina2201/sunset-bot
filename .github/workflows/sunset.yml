@@ -1,9 +1,9 @@
 name: Sunset Bot
 
 on:
-  schedule:
-    - cron: "0 13 * * *"  # каждый день (UTC)
   workflow_dispatch:
+  schedule:
+    - cron: "0 10 * * *"
 
 jobs:
   run-bot:
@@ -20,7 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install python-telegram-bot requests
+          pip install requests
+          pip install python-telegram-bot==13.15
 
       - name: Run bot
         env:
